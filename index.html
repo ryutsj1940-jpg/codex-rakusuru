@@ -146,6 +146,23 @@
     .card__text {
       color: var(--muted);
       font-size: 0.98rem;
+      margin: 0;
+    }
+
+    .card__text + .card__text {
+      margin-top: 0.75rem;
+    }
+
+    .card__list {
+      margin: 0;
+      padding-left: 1.2rem;
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.8;
+    }
+
+    .card__list li + li {
+      margin-top: 0.6rem;
     }
 
     @media (max-width: 600px) {
@@ -185,28 +202,25 @@
       <section class="card" aria-labelledby="motto-title">
         <div class="card__icon">🌿</div>
         <h2 class="card__title" id="motto-title">モットー</h2>
-        <p class="card__text">
-          「安心・丁寧・透明」をモットーに、ご家庭ごとに最適なプランをデザイン。
-          安心して任せられるパートナーとして、笑顔とゆとりのある暮らしをお届けします。
-        </p>
+        <p class="card__text">貴方の時間を「増やし」ます。</p>
+        <p class="card__text">もっと自由に　あなたの時間</p>
+        <p class="card__text">好きなことを　もっと</p>
       </section>
 
       <section class="card" aria-labelledby="menu-title">
         <div class="card__icon">🧺</div>
         <h2 class="card__title" id="menu-title">メニュー</h2>
-        <p class="card__text">
-          お掃除・お料理・洗濯・整理整頓など、目的に合わせて選べる豊富なメニューをご用意。
-          定期利用からスポット対応まで、ライフスタイルに合わせた柔軟なサービスです。
-        </p>
+        <ul class="card__list">
+          <li><strong>プラン①</strong> 60分毎 3,000円〜／日常家事サポート（掃除・洗濯・食器洗い）</li>
+          <li><strong>プレミアム</strong> 5時間 13,000円／大掃除・全体清掃。部屋全体をまとめて徹底</li>
+          <li><strong>プロフェッショナル</strong> 一ヶ所 5,500円〜／水回り徹底（浴室・キッチン等）・家具レイアウト変更・処分手伝い（要相談）</li>
+        </ul>
       </section>
 
       <section class="card" aria-labelledby="booking-title">
         <div class="card__icon">📅</div>
         <h2 class="card__title" id="booking-title">予約方法</h2>
-        <p class="card__text">
-          公式サイトから24時間いつでも予約可能。希望日時と内容を入力するだけで、担当スタッフが確定。
-          初めての方には、コーディネーターが丁寧にヒアリングを行います。
-        </p>
+        <p class="card__text">公式LINEにて「お名前・お住まい（市区）・希望日時・ご要望」を送信してください。</p>
       </section>
     </div>
   </main>
