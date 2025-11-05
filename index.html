@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ラクスル | 家事代行サービス</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #4f7cff;
+      --accent-light: #dce6ff;
+      --bg: #f8f9fb;
+      --text: #293044;
+      --muted: #667085;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Noto Sans JP', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      position: relative;
+      min-height: 60vh;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(79, 124, 255, 0.85), rgba(105, 190, 252, 0.85)),
+        url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=80') center/cover;
+      color: #fff;
+      padding: 4rem 1.5rem 6rem;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: clamp(300px, 70vw, 900px);
+      height: 120px;
+      background: var(--bg);
+      border-radius: 50%;
+      filter: blur(40px);
+      z-index: 0;
+    }
+
+    .hero {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+    }
+
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 999px;
+      padding: 0.4rem 1rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+    }
+
+    .hero__title {
+      margin: 1.5rem 0 1rem;
+      font-size: clamp(2.4rem, 5vw, 3.4rem);
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .hero__lead {
+      margin: 0 auto;
+      max-width: 48ch;
+      font-size: 1.05rem;
+      opacity: 0.95;
+    }
+
+    main {
+      margin-top: -4rem;
+      padding: 0 1.5rem 5rem;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 2.2rem;
+      box-shadow: 0 18px 35px rgba(32, 44, 89, 0.12);
+      border: 1px solid rgba(79, 124, 255, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(79, 124, 255, 0.12), rgba(250, 252, 255, 0));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card__icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      background: var(--accent-light);
+      color: var(--accent);
+      border-radius: 14px;
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card__title {
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    .card__text {
+      color: var(--muted);
+      font-size: 0.98rem;
+      margin: 0;
+    }
+
+    .card__text + .card__text {
+      margin-top: 0.75rem;
+    }
+
+    .card__list {
+      margin: 0;
+      padding-left: 1.2rem;
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.8;
+    }
+
+    .card__list li + li {
+      margin-top: 0.6rem;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        min-height: 70vh;
+        padding-bottom: 5rem;
+      }
+
+      .hero__title {
+        font-size: 2.2rem;
+      }
+
+      main {
+        margin-top: -5rem;
+      }
+
+      .card {
+        padding: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="hero">
+      <span class="hero__badge">家事代行サービス</span>
+      <h1 class="hero__title">ラクスルで、家事の負担を軽やかに。</h1>
+      <p class="hero__lead">
+        ラクスルは、忙しい日々でも「家に帰るのが楽しみになる」暮らしを叶える家事代行サービスです。
+        プロのスタッフが、あなたとご家族のリズムに寄り添いながら、心地よい暮らしをサポートします。
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <div class="card-grid">
+      <section class="card" aria-labelledby="motto-title">
+        <div class="card__icon">🌿</div>
+        <h2 class="card__title" id="motto-title">モットー</h2>
+        <p class="card__text">貴方の時間を「増やし」ます。</p>
+        <p class="card__text">もっと自由に　あなたの時間</p>
+        <p class="card__text">好きなことを　もっと</p>
+      </section>
+
+      <section class="card" aria-labelledby="menu-title">
+        <div class="card__icon">🧺</div>
+        <h2 class="card__title" id="menu-title">メニュー</h2>
+        <ul class="card__list">
+          <li><strong>プラン①</strong> 60分毎 3,000円〜／日常家事サポート（掃除・洗濯・食器洗い）</li>
+          <li><strong>プレミアム</strong> 5時間 13,000円／大掃除・全体清掃。部屋全体をまとめて徹底</li>
+          <li><strong>プロフェッショナル</strong> 一ヶ所 5,500円〜／水回り徹底（浴室・キッチン等）・家具レイアウト変更・処分手伝い（要相談）</li>
+        </ul>
+      </section>
+
+      <section class="card" aria-labelledby="booking-title">
+        <div class="card__icon">📅</div>
+        <h2 class="card__title" id="booking-title">予約方法</h2>
+        <p class="card__text">公式LINEにて「お名前・お住まい（市区）・希望日時・ご要望」を送信してください。</p>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
