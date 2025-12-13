@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ラクスル - もっと自由に　あなたの時間</title>
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --card: #ffffff;
+      --primary: #4a6cf7;
+      --accent: #ffb347;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --shadow: 0 20px 45px rgba(31, 41, 55, 0.08);
+      --radius: 18px;
+      font-family: 'Noto Sans JP', 'Hiragino Sans', '游ゴシック体', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(74,108,247,0.08), transparent 30%),
+                  radial-gradient(circle at 80% 10%, rgba(255,179,71,0.12), transparent 26%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 56px 20px 72px;
+    }
+
+    header {
+      background: linear-gradient(135deg, rgba(74,108,247,0.12), rgba(255,179,71,0.18));
+      border-radius: var(--radius);
+      padding: 40px 36px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(74,108,247,0.12), transparent 40%),
+                  radial-gradient(circle at 80% 80%, rgba(255,179,71,0.2), transparent 40%);
+      z-index: -1;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: 32px;
+      letter-spacing: 0.06em;
+    }
+
+    .intro {
+      margin: 0;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      background: var(--card);
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+      color: var(--primary);
+      font-weight: 700;
+      margin-top: 18px;
+      font-size: 14px;
+    }
+
+    .badge span {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 50%;
+      box-shadow: 0 0 0 6px rgba(74,108,247,0.12);
+    }
+
+    section {
+      margin-top: 36px;
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 32px;
+    }
+
+    section h2 {
+      margin: 0 0 18px;
+      font-size: 24px;
+    }
+
+    .menu-table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: var(--radius);
+    }
+
+    .menu-table thead {
+      background: linear-gradient(135deg, rgba(74,108,247,0.12), rgba(255,179,71,0.12));
+    }
+
+    .menu-table th, .menu-table td {
+      padding: 16px 18px;
+      text-align: left;
+    }
+
+    .menu-table th {
+      color: var(--muted);
+      font-size: 14px;
+      letter-spacing: 0.04em;
+    }
+
+    .menu-table tr + tr td {
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .menu-table tbody tr:hover {
+      background: rgba(74,108,247,0.06);
+      transition: background 0.2s ease;
+    }
+
+    .plan {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .pill {
+      background: rgba(74,108,247,0.1);
+      color: var(--primary);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .highlight {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .note {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 26px; }
+      section { padding: 24px; }
+      .menu-table th, .menu-table td { padding: 12px; }
+      .container { padding: 36px 16px 56px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>ラクスル - もっと自由に　あなたの時間</h1>
+      <p class="intro">文学部　文学科　4年３組36番　辻本龍成</p>
+      <div class="badge"><span></span>家事代行サービスの「ラクスル」です</div>
+    </header>
+
+    <section>
+      <h2>メニュー表</h2>
+      <table class="menu-table">
+        <thead>
+          <tr>
+            <th>プラン</th>
+            <th>所要時間</th>
+            <th>料金</th>
+            <th>主な内容</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="plan">スタンダード <span class="pill">人気</span></td>
+            <td>60分毎</td>
+            <td class="highlight">3,000円〜</td>
+            <td>日常家事サポート（掃除・洗濯・食器洗い）</td>
+          </tr>
+          <tr>
+            <td class="plan">プレミアム</td>
+            <td>5時間</td>
+            <td class="highlight">13,000円</td>
+            <td>大掃除・全体清掃。部屋全体をまとめて徹底</td>
+          </tr>
+          <tr>
+            <td class="plan">プロフェッショナル</td>
+            <td>1か所</td>
+            <td class="highlight">5,500円〜</td>
+            <td>水回り徹底（浴室・キッチン等）／家具レイアウト変更・処分手伝い（要相談）</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note">※ 料金は税込表示です。ご要望に応じて柔軟に対応いたしますのでお気軽にご相談ください。</p>
+    </section>
+  </div>
+</body>
+</html>
