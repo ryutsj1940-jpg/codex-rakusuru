@@ -4,150 +4,120 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ラクスル - もっと自由に　あなたの時間</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Manrope:wght@600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f5f7fb;
-      --card: #ffffff;
-      --primary: #4a6cf7;
-      --accent: #ffb347;
-      --text: #1f2937;
+      --bg: #f6f8fb;
+      --surface: #ffffff;
+      --primary: #3c6ff3;
+      --primary-dark: #2f56c8;
+      --accent: #f7b267;
+      --text: #111827;
       --muted: #6b7280;
-      --shadow: 0 20px 45px rgba(31, 41, 55, 0.08);
       --radius: 18px;
-      --glow: 0 20px 60px rgba(74,108,247,0.16);
-      font-family: 'Noto Sans JP', 'Hiragino Sans', '游ゴシック体', sans-serif;
+      --shadow: 0 18px 38px rgba(31, 41, 55, 0.12);
     }
+
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      background: radial-gradient(circle at 15% 20%, rgba(74,108,247,0.10), transparent 30%),
-                  radial-gradient(circle at 85% 10%, rgba(255,179,71,0.16), transparent 28%),
+      background: radial-gradient(circle at 20% 20%, rgba(60, 111, 243, 0.12), transparent 32%),
+                  radial-gradient(circle at 80% 10%, rgba(247, 178, 103, 0.16), transparent 28%),
                   var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      font-family: 'Noto Sans JP', 'Hiragino Sans', '游ゴシック体', sans-serif;
+      line-height: 1.7;
     }
 
     .container {
-      max-width: 1080px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 64px 20px 84px;
+      padding: 56px 20px 80px;
     }
 
     header {
-      background: linear-gradient(135deg, rgba(74,108,247,0.12), rgba(255,179,71,0.18));
+      background: linear-gradient(120deg, rgba(60, 111, 243, 0.12), rgba(247, 178, 103, 0.22));
       border-radius: var(--radius);
-      padding: 48px 40px;
+      padding: 40px;
       box-shadow: var(--shadow);
-      position: relative;
       overflow: hidden;
+      position: relative;
       isolation: isolate;
     }
 
-    header::before,
     header::after {
-      content: '';
+      content: "";
       position: absolute;
-      border-radius: 50%;
-      filter: blur(60px);
-      opacity: 0.75;
-      z-index: -1;
-    }
-
-    header::before {
       width: 260px;
       height: 260px;
-      background: rgba(74,108,247,0.18);
-      top: -120px;
-      left: -80px;
-    }
-
-    header::after {
-      width: 240px;
-      height: 240px;
-      background: rgba(255,179,71,0.22);
-      bottom: -120px;
-      right: -60px;
+      background: radial-gradient(circle, rgba(60, 111, 243, 0.18), transparent 60%);
+      filter: blur(40px);
+      right: -80px;
+      top: -80px;
+      z-index: -1;
     }
 
     .hero {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 24px;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
       align-items: center;
     }
 
     h1 {
-      margin: 0 0 12px;
+      margin: 0 0 10px;
       font-size: 32px;
       letter-spacing: 0.06em;
+      font-family: 'Manrope', 'Noto Sans JP', sans-serif;
     }
 
     .intro {
-      margin: 0 0 8px;
-      font-weight: 600;
+      margin: 0 0 14px;
       color: var(--muted);
+      font-weight: 600;
     }
 
-    .lede {
+    .lead {
       margin: 0;
-      max-width: 640px;
-      color: #374151;
-      line-height: 1.7;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 14px;
-      background: var(--card);
-      border-radius: 999px;
-      box-shadow: var(--shadow);
-      color: var(--primary);
-      font-weight: 700;
-      margin-top: 18px;
-      font-size: 14px;
-    }
-
-    .badge span {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      border-radius: 50%;
-      box-shadow: 0 0 0 6px rgba(74,108,247,0.12);
+      color: #1f2937;
     }
 
     .cta-row {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 14px;
-      margin-top: 24px;
+      gap: 12px;
+      margin-top: 20px;
     }
 
     .cta {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: linear-gradient(135deg, var(--primary), #6f8cff);
-      color: #fff;
-      padding: 12px 18px;
+      padding: 12px 16px;
       border-radius: 12px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       text-decoration: none;
       font-weight: 700;
-      box-shadow: var(--glow);
+      box-shadow: var(--shadow);
       transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
-    .cta:hover { transform: translateY(-1px); }
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 38px rgba(60, 111, 243, 0.28);
+    }
 
     .subtle { color: var(--muted); font-size: 14px; }
 
     .hero-card {
-      background: rgba(255, 255, 255, 0.86);
+      background: rgba(255, 255, 255, 0.9);
       border-radius: var(--radius);
-      padding: 20px 18px;
+      padding: 18px;
       box-shadow: var(--shadow);
       display: grid;
       gap: 12px;
@@ -157,19 +127,19 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      padding: 12px 12px;
-      border-radius: 12px;
-      background: linear-gradient(120deg, rgba(74,108,247,0.08), rgba(255,179,71,0.12));
-      color: #0f172a;
+      padding: 12px;
+      border-radius: 14px;
+      background: linear-gradient(130deg, rgba(60, 111, 243, 0.08), rgba(247, 178, 103, 0.12));
       font-weight: 700;
+      color: #0f172a;
     }
 
     .hero-icon {
       width: 38px;
       height: 38px;
-      border-radius: 12px;
       display: grid;
       place-items: center;
+      border-radius: 12px;
       background: #fff;
       box-shadow: var(--shadow);
       font-size: 18px;
@@ -177,109 +147,77 @@
 
     section {
       margin-top: 36px;
-      background: var(--card);
+      background: var(--surface);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       padding: 32px;
     }
 
     section h2 {
-      margin: 0 0 18px;
+      margin: 0 0 16px;
       font-size: 24px;
+      font-family: 'Manrope', 'Noto Sans JP', sans-serif;
     }
 
-    .features {
+    .feature-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-bottom: 18px;
     }
 
     .feature-card {
-      padding: 18px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, rgba(74,108,247,0.06), rgba(255,179,71,0.08));
+      padding: 16px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(60, 111, 243, 0.07), rgba(247, 178, 103, 0.08));
       box-shadow: var(--shadow);
-      display: grid;
-      gap: 8px;
     }
 
-    .feature-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
-      display: grid;
-      place-items: center;
-      background: #fff;
-      font-size: 18px;
-      box-shadow: var(--shadow);
-    }
+    .feature-card strong { display: block; margin-bottom: 6px; }
 
     .feature-card p { margin: 0; color: var(--muted); }
 
     .menu-table {
       width: 100%;
       border-collapse: collapse;
+      border-radius: 14px;
       overflow: hidden;
-      border-radius: var(--radius);
-      margin-top: 10px;
+      background: #fff;
     }
 
-    .menu-table thead {
-      background: linear-gradient(135deg, rgba(74,108,247,0.12), rgba(255,179,71,0.12));
-    }
+    .menu-table thead { background: linear-gradient(135deg, rgba(60, 111, 243, 0.14), rgba(247, 178, 103, 0.16)); }
 
     .menu-table th, .menu-table td {
-      padding: 16px 18px;
+      padding: 14px 16px;
       text-align: left;
     }
 
     .menu-table th {
+      font-size: 13px;
+      letter-spacing: 0.06em;
       color: var(--muted);
-      font-size: 14px;
-      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
 
-    .menu-table tr + tr td { border-top: 1px solid #e5e7eb; }
+    .menu-table tbody tr + tr td { border-top: 1px solid #e5e7eb; }
 
-    .menu-table tbody tr:hover {
-      background: rgba(74,108,247,0.06);
-      transition: background 0.2s ease;
-    }
+    .menu-table tbody tr:hover { background: rgba(60, 111, 243, 0.06); transition: background 0.2s ease; }
 
-    .plan {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 700;
-      color: var(--text);
-    }
+    .plan-name { font-weight: 700; color: var(--text); }
 
-    .pill {
-      background: rgba(74,108,247,0.1);
-      color: var(--primary);
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 700;
-    }
+    .price { color: var(--primary-dark); font-weight: 700; }
 
-    .highlight { color: var(--primary); font-weight: 700; }
+    .note { margin-top: 12px; color: var(--muted); font-size: 14px; }
 
-    .note { margin-top: 14px; color: var(--muted); font-size: 14px; }
-
-    @media (max-width: 900px) {
+    @media (max-width: 840px) {
       .hero { grid-template-columns: 1fr; }
+      header { padding: 32px; }
     }
 
-    @media (max-width: 720px) {
+    @media (max-width: 640px) {
       h1 { font-size: 26px; }
       section { padding: 24px; }
-      .features { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
-      .menu-table th, .menu-table td { padding: 12px; }
       .container { padding: 36px 16px 56px; }
-      .cta-row { align-items: flex-start; }
-      .subtle { line-height: 1.5; }
     }
   </style>
 </head>
@@ -290,25 +228,24 @@
         <div>
           <h1>ラクスル - もっと自由に　あなたの時間</h1>
           <p class="intro">文学部　文学科　4年３組36番　辻本龍成</p>
-          <p class="lede">日常の「やらなきゃ」を、プロの手でふわりと軽く。忙しいあなたの時間を解放する、やさしい家事代行サービスです。</p>
+          <p class="lead">家事代行のプロが、あなたの暮らしをやさしくサポート。掃除・洗濯・片付けまで、忙しい日常を軽やかに整えます。</p>
           <div class="cta-row">
             <a class="cta" href="tel:000-0000-0000">今すぐ相談する</a>
-            <span class="subtle">家事全般のご相談はお気軽にどうぞ</span>
+            <span class="subtle">まずはお気軽にご連絡ください</span>
           </div>
-          <div class="badge"><span></span>家事代行サービスの「ラクスル」です</div>
         </div>
         <div class="hero-card">
           <div class="hero-item">
             <div class="hero-icon">🧹</div>
-            1回からOKの日常お手伝い
+            1回から頼める日常お手伝い
           </div>
           <div class="hero-item">
-            <div class="hero-icon">⏱️</div>
-            急ぎのご依頼もスケジュール調整
+            <div class="hero-icon">🧴</div>
+            洗剤の持参・選定もおまかせ
           </div>
           <div class="hero-item">
-            <div class="hero-icon">💬</div>
-            LINE・お電話で簡単相談
+            <div class="hero-icon">📞</div>
+            相談はお電話・LINEでシンプル
           </div>
         </div>
       </div>
@@ -316,21 +253,18 @@
 
     <section>
       <h2>メニュー表</h2>
-      <div class="features">
+      <div class="feature-grid">
         <div class="feature-card">
-          <div class="feature-icon">✨</div>
           <strong>清潔感ある仕上がり</strong>
-          <p>洗剤の選定から拭き跡まで、細部にこだわった丁寧なクリーニング。</p>
+          <p>水回りや床も丁寧に仕上げ、心地よい空間をお届けします。</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🤝</div>
           <strong>担当者固定で安心</strong>
-          <p>毎回同じスタッフが伺うので、ご希望や段取りを共有しやすい体制です。</p>
+          <p>同じスタッフが伺うから、段取りや好みをしっかり共有できます。</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🧭</div>
           <strong>柔軟なカスタム</strong>
-          <p>掃除・片付け・家具移動まで、プラン内で順番や重点箇所を自由に指定。</p>
+          <p>掃除・片付け・家具移動まで、重点箇所の相談も自由です。</p>
         </div>
       </div>
       <table class="menu-table">
@@ -344,26 +278,26 @@
         </thead>
         <tbody>
           <tr>
-            <td class="plan">スタンダード <span class="pill">人気</span></td>
+            <td class="plan-name">スタンダード</td>
             <td>60分毎</td>
-            <td class="highlight">3,000円〜</td>
+            <td class="price">3,000円〜</td>
             <td>日常家事サポート（掃除・洗濯・食器洗い）</td>
           </tr>
           <tr>
-            <td class="plan">プレミアム</td>
+            <td class="plan-name">プレミアム</td>
             <td>5時間</td>
-            <td class="highlight">13,000円</td>
+            <td class="price">13,000円</td>
             <td>大掃除・全体清掃。部屋全体をまとめて徹底</td>
           </tr>
           <tr>
-            <td class="plan">プロフェッショナル</td>
+            <td class="plan-name">プロフェッショナル</td>
             <td>1か所</td>
-            <td class="highlight">5,500円〜</td>
+            <td class="price">5,500円〜</td>
             <td>水回り徹底（浴室・キッチン等）／家具レイアウト変更・処分手伝い（要相談）</td>
           </tr>
         </tbody>
       </table>
-      <p class="note">※ 料金は税込表示です。ご要望に応じて柔軟に対応いたしますのでお気軽にご相談ください。</p>
+      <p class="note">※ 料金は税込表示です。ご要望に合わせて柔軟に対応いたしますのでお気軽にご相談ください。</p>
     </section>
   </div>
 </body>
