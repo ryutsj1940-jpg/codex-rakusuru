@@ -35,7 +35,7 @@
     header {
       background: linear-gradient(135deg, rgba(74,108,247,0.12), rgba(255,179,71,0.18));
       border-radius: var(--radius);
-      padding: 40px 36px;
+      padding: 46px 36px 44px;
       box-shadow: var(--shadow);
       position: relative;
       overflow: hidden;
@@ -52,15 +52,22 @@
     }
 
     h1 {
-      margin: 0 0 16px;
+      margin: 0 0 12px;
       font-size: 32px;
       letter-spacing: 0.06em;
     }
 
     .intro {
-      margin: 0;
+      margin: 0 0 8px;
       font-weight: 600;
       color: var(--muted);
+    }
+
+    .lede {
+      margin: 0;
+      max-width: 640px;
+      color: #374151;
+      line-height: 1.7;
     }
 
     .badge {
@@ -84,6 +91,38 @@
       background: linear-gradient(135deg, var(--primary), var(--accent));
       border-radius: 50%;
       box-shadow: 0 0 0 6px rgba(74,108,247,0.12);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--primary), #6f8cff);
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      box-shadow: 0 10px 25px rgba(74,108,247,0.25);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 30px rgba(74,108,247,0.28);
+    }
+
+    .subtle {
+      color: var(--muted);
+      font-size: 14px;
     }
 
     section {
@@ -163,6 +202,8 @@
       section { padding: 24px; }
       .menu-table th, .menu-table td { padding: 12px; }
       .container { padding: 36px 16px 56px; }
+      .cta-row { align-items: flex-start; }
+      .subtle { line-height: 1.5; }
     }
   </style>
 </head>
@@ -171,6 +212,11 @@
     <header>
       <h1>ラクスル - もっと自由に　あなたの時間</h1>
       <p class="intro">文学部　文学科　4年３組36番　辻本龍成</p>
+      <p class="lede">日常の「やらなきゃ」を、プロの手でふわりと軽く。忙しいあなたの時間を解放する、やさしい家事代行サービスです。</p>
+      <div class="cta-row">
+        <a class="cta" href="tel:000-0000-0000">今すぐ相談する</a>
+        <span class="subtle">家事全般のご相談はお気軽にどうぞ</span>
+      </div>
       <div class="badge"><span></span>家事代行サービスの「ラクスル」です</div>
     </header>
 
